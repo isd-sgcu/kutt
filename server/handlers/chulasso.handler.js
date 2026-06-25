@@ -4,7 +4,7 @@
 //   2. ChulaSSO redirects back to {callback}?ticket={id}
 //   3. Validate server-side: POST {BASE}/serviceValidation with headers
 //      DeeAppId / DeeAppSecret / DeeTicket -> JSON profile { email, roles, ... }
-// On success we find-or-create a verified Kutt user (mirrors the OIDC handler
+// On success, find-or-create a verified Kutt user (mirroring the OIDC handler
 // in passport.js) and issue the normal Kutt session cookie.
 const bcrypt = require("bcryptjs");
 
@@ -15,7 +15,7 @@ const env = require("../env");
 
 const CustomError = utils.CustomError;
 
-// Step 1 — send the browser to ChulaSSO with our callback as `service`.
+// Step 1 — send the browser to ChulaSSO with the callback as `service`.
 async function start(req, res) {
   const params = new URLSearchParams({
     service: utils.getSiteURL() + "/login/chulasso",

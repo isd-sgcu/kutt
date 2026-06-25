@@ -53,9 +53,7 @@ a.forgot-password, a.nav, .nav { color: var(--secondary-text-color); }
 /* white ISD logo sits on the dark header */
 header .logo img { height: 26px; width: auto; }
 
-/* ============================================================
-   Audit pass — every remaining hardcoded light surface in styles.css
-   ============================================================ */
+/* Remaining hardcoded light surfaces from styles.css, darkened. */
 
 /* modal / dialog popup (the white success/confirm box) */
 .dialog .box,

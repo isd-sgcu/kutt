@@ -6,6 +6,13 @@
 
 [https://kutt.to](https://kutt.to)
 
+> [!NOTE]
+> This is the **ISD/SGCU fork** of Kutt. It adds ChulaSSO login (Chulalongkorn
+> University accounts; a custom ticket flow, not OIDC) and an ISD theme, and runs at
+> [chula.me](https://chula.me). The changes live in `server/handlers/chulasso.*`,
+> `server/env.js`, and `custom/`. Deployment is managed separately in
+> [isd-sgcu/infra](https://github.com/isd-sgcu/infra). Upstream documentation follows.
+
 > [!WARNING]
 > **[kutt.it](https://kutt.it) is NOT OWNED BY US.** It could be a phishing site. We had the domain but it has been deactivated by the Italian TLD registrar due to the lack of identification documents, and now it's owned by someone else.
 
