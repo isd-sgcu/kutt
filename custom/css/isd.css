@@ -52,3 +52,50 @@ a.forgot-password, a.nav, .nav { color: var(--secondary-text-color); }
 
 /* white ISD logo sits on the dark header */
 header .logo img { height: 26px; width: auto; }
+
+/* ============================================================
+   Audit pass — every remaining hardcoded light surface in styles.css
+   ============================================================ */
+
+/* modal / dialog popup (the white success/confirm box) */
+.dialog .box,
+.dialog .content-wrapper,
+.dialog .content {
+  background-color: hsl(0,0%,10%) !important;
+  color: #fff !important;
+}
+.dialog .content h2,
+.dialog .content p,
+.dialog .content label { color: #fff !important; }
+
+/* link table expanded edit panel (was #fafafa) */
+#main-table-wrapper table tr.edit,
+#main-table-wrapper table tr.edit td,
+#main-table-wrapper table tr.edit td form { background-color: hsl(0,0%,10%) !important; }
+#main-table-wrapper table tr.edit label,
+table tr.edit label,
+label { color: hsl(0,0%,82%); }
+
+/* right-fade gradient on the Original-URL cell (was fading to WHITE; only :hover used the dark var) */
+#main-table-wrapper table tbody td.right-fade:after {
+  background: linear-gradient(to left, hsl(0,0%,7%), rgba(0,0,0,0)) !important;
+}
+#main-table-wrapper table tbody tr:hover td.right-fade:after {
+  background: linear-gradient(to left, var(--table-tr-hover-bg-color), rgba(0,0,0,0)) !important;
+}
+
+/* tabs, pagination/nav buttons, checkboxes, stats panel, map tooltip */
+table .tab a,
+table .tab a.active { background-color: hsl(0,0%,14%) !important; color: #fff !important; }
+button.nav { background-color: hsl(0,0%,14%) !important; color: #fff !important; }
+button.nav:disabled { background-color: hsl(0,0%,10%) !important; }
+input[type="checkbox"] { background-color: hsl(0,0%,18%) !important; }
+input[type="checkbox"]:checked { background-color: var(--color-primary) !important; }
+#stats { background-color: hsl(0,0%,10%) !important; }
+#map-tooltip:after { background: rgba(20,20,20,0.96) !important; color: #fff !important; }
+#map-tooltip:before { border-top-color: rgba(20,20,20,0.96) !important; }
+
+/* default (non-coloured) buttons like "Close" had #444 text on a now-dark bg */
+button, a.button { color: #fff; }
+button.action { color: inherit; }   /* icon buttons keep their pastel circles */
+select { color: #fff !important; }
