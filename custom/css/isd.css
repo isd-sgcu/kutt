@@ -1,0 +1,54 @@
+/* SGCU / ISD brand theme for chula.me — dark, Space Grotesk + Anuphan, ISD pink.
+   Loaded after styles.css (via custom_styles), so these :root values win. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Anuphan:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: hsl(0, 0%, 6%);                 /* #0f0f0f */
+  --text-color: hsl(0, 0%, 100%);
+  --color-primary: hsl(335, 92%, 56%);        /* ISD pink */
+  --outline-color: hsl(335, 92%, 56%);
+  --underline-color: hsl(335, 92%, 56%);
+  --secondary-text-color: hsl(0, 0%, 64%);
+  --focus-outline-color: hsla(335, 92%, 57%, 0.5);
+  --checkbox-bg-color: hsl(335, 92%, 57%);
+  --input-label-color: hsl(0, 0%, 85%);
+  --button-bg: linear-gradient(to right, hsl(0,0%,20%), hsl(0,0%,14%));
+  --button-bg-box-shadow-color: rgba(0,0,0,0.5);
+  --button-bg-primary: linear-gradient(to right, hsl(335,92%,57%), hsl(322,88%,49%));
+  --button-bg-primary-box-shadow-color: hsla(335,92%,50%,0.45);
+  --button-bg-secondary: linear-gradient(to right, hsl(245,72%,63%), hsl(255,74%,53%));
+  --button-bg-secondary-box-shadow-color: hsla(248,62%,52%,0.45);
+  --table-bg-color: hsl(0,0%,10%);
+  --table-tr-border-color: hsl(0,0%,16%);
+  --table-tr-hover-bg-color: hsl(0,0%,13%);
+  --table-head-tr-border-color: hsl(0,0%,20%);
+  --table-status-gray-bg-color: hsl(0,0%,14%);
+}
+
+body, button, input, select, textarea,
+h1, h2, h3, h4, h5, a, p, label {
+  font-family: "Space Grotesk", "Anuphan", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* dark form fields (Kutt hardcodes white on these) */
+input[type="text"], input[type="email"], input[type="password"],
+textarea, select, button.nav, table .tab a {
+  background-color: hsl(0,0%,11%) !important;
+  color: #fff !important;
+  border-bottom-color: hsl(0,0%,22%) !important;
+}
+input::placeholder, textarea::placeholder { color: hsl(0,0%,48%) !important; }
+
+/* dark surfaces (table, stats panel, modals/dialogs) */
+table, #stats, .dialog, .modal {
+  background-color: hsl(0,0%,9%) !important;
+  color: #fff;
+}
+
+/* links */
+a { color: #fff; }
+a:hover { color: var(--color-primary); }
+a.forgot-password, a.nav, .nav { color: var(--secondary-text-color); }
+
+/* white ISD logo sits on the dark header */
+header .logo img { height: 26px; width: auto; }
