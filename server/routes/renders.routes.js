@@ -5,6 +5,7 @@ const renders = require("../handlers/renders.handler");
 const asyncHandler = require("../utils/asyncHandler");
 const locals = require("../handlers/locals.handler");
 const auth = require("../handlers/auth.handler");
+const chulasso = require("../handlers/chulasso.handler");
 const env = require("../env");
 
 const router = Router();
@@ -26,12 +27,26 @@ router.get(
 );
 
 router.get(
-  "/login/oidc", 
+  "/login/oidc",
   locals.viewTemplate("login"),
   auth.featureAccess([env.OIDC_ENABLED]),
   asyncHandler(auth.jwtLoosePage),
   asyncHandler(auth.oidc),
   asyncHandler(auth.login)
+);
+
+// ChulaSSO ticket flow: /start sends the browser to ChulaSSO; the callback
+// validates the returned ticket server-side and issues the session.
+router.get(
+  "/login/chulasso/start",
+  auth.featureAccess([env.CHULASSO_ENABLED]),
+  asyncHandler(chulasso.start)
+);
+
+router.get(
+  "/login/chulasso",
+  auth.featureAccess([env.CHULASSO_ENABLED]),
+  asyncHandler(chulasso.callback)
 );
 
 router.get(

@@ -62,6 +62,14 @@
       </a>
     </div>
   {{/if}}
+  {{#if chulasso_enabled}}
+    <div class="buttons-wrapper">
+      <a class="button secondary full" href="/login/chulasso/start" title="Login with ChulaSSO">
+        <span>{{> icons/key}}</span>
+        Login with ChulaSSO
+      </a>
+    </div>
+  {{/if}}
   {{#unless disallow_login_form}}
     {{#if mail_enabled}}
       <a class="forgot-password" href="/reset-password" title="Reset password">Forgot your password?</a>

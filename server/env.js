@@ -68,6 +68,13 @@ const spec = {
   OIDC_CLIENT_SECRET: str({ default: "" }),
   OIDC_SCOPE: str({ default: "openid profile email" }),
   OIDC_EMAIL_CLAIM: str({ default: "email" }),
+  // ChulaSSO 2.0 (custom ticket flow — not OIDC). See server/handlers/chulasso.handler.js
+  CHULASSO_ENABLED: bool({ default: false }),
+  CHULASSO_BASE: str({ default: "https://account.it.chula.ac.th" }),
+  CHULASSO_APP_ID: str({ default: "" }),
+  CHULASSO_APP_SECRET: str({ default: "" }),
+  CHULASSO_ALLOWED_ROLES: str({ default: "" }),   // csv e.g. "student,faculty"; empty = any Chula account
+  CHULASSO_SERVICE_NAME: str({ default: "" }),     // grant-screen name; defaults to SITE_NAME
   ENABLE_RATE_LIMIT: bool({ default: false }),
   REPORT_EMAIL: str({ default: "" }),
   CONTACT_EMAIL: str({ default: "" }),
